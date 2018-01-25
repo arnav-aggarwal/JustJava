@@ -49,8 +49,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayPrice(int price) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(price));
+        String formattedPrice = NumberFormat.getCurrencyInstance().format(price);
+        String finalText = "Total: " + formattedPrice + "\nThank you!";
+        priceTextView.setText(finalText);
     }
+
+
 
     public void increment(View view) {
         quantity++;
